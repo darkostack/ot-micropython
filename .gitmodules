@@ -1,0 +1,8 @@
+[submodule "third_party/openthread"]
+	path = third_party/openthread
+	url = https://github.com/openthread/openthread.git
+	branch = master
+[submodule "third_party/micropython"]
+	path = third_party/micropython
+	url = https://github.com/micropython/micropython.git
+	branch = master
