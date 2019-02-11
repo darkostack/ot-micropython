@@ -1,12 +1,12 @@
 PLATFORM = posix
 
-all: BUILD_THREAD BUILD_MICROPYTHON
+all:
 
-BUILD_THREAD:
+ot:
 	@cd third_party/openthread && ./bootstrap
 	@cd third_party/openthread && make -s -f examples/Makefile-$(PLATFORM)
 
-BUILD_MICROPYTHON:
+mp:
 ifeq ($(PLATFORM),posix)
 	@rm -rf third_party/micropython/ports/unix/include
 	@cp -R third_party/openthread/output/include third_party/micropython/ports/unix
