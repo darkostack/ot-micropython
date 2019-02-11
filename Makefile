@@ -1,5 +1,12 @@
 PLATFORM = posix
 
+VERBOSITY ?= 0
+
+# set verbosity
+ifeq ($(v),1)
+VERBOSITY = 1
+endif
+
 all:
 
 ot:
@@ -8,9 +15,9 @@ ot:
 
 mp:
 ifeq ($(PLATFORM),posix)
-	@rm -rf third_party/micropython/ports/unix/include
-	@cp -R third_party/openthread/output/include third_party/micropython/ports/unix
-	@cd third_party/micropython/ports/unix && make clean all
+	@rm -rf third_party/micropython/ot/include
+	@cp -R third_party/openthread/output/include third_party/micropython/ot
+	@cd third_party/micropython/ports/unix && make V=$(VERBOSITY) clean all
 endif
 
 clean:
