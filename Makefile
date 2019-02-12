@@ -15,8 +15,8 @@ ot:
 
 mp:
 ifeq ($(PLATFORM),posix)
-	@rm -rf third_party/micropython/ot/include
-	@cp -R third_party/openthread/output/include third_party/micropython/ot
+	@rm -rf third_party/micropython/ot/include/openthread
+	@cp -R third_party/openthread/output/include/openthread third_party/micropython/ot/include
 	@cd third_party/micropython/ports/unix && make V=$(VERBOSITY) clean all
 endif
 

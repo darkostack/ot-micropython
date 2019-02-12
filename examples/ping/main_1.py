@@ -1,14 +1,15 @@
 import ot
 
-instance = ot.Instance(1)
-platform = ot.Platform(instance)
+thread = ot.Instance(1)
 
 def main():
-    if instance.is_initialized():
-        platform.cli_uart_init()
+    if thread.is_initialized():
+        thread.cli_uart_init()
+        thread.autocommission(0x1234, 11) #panid: 0x1234, channel: 11
+        thread.autostart()
         while True:
-            platform.tasklet_run()
-            platform.process_drivers()
+            thread.tasklet_run()
+            thread.process_drivers()
 
 if __name__ == "__main__":
     main()
