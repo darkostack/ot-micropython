@@ -10,8 +10,7 @@ def main():
         thread.cli_uart_init()
         thread.autostart()
         while True:
-            thread.tasklet_run()
-            thread.process_drivers()
+            thread.process()
 
 if __name__ == "__main__":
     main()
