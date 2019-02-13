@@ -15,6 +15,7 @@ ot:
 
 mp:
 ifeq ($(PLATFORM),posix)
+	@rm -rf tmp
 	@rm -rf third_party/micropython/ot/include/openthread
 	@cp -R third_party/openthread/output/include/openthread third_party/micropython/ot/include
 	@rm -rf third_party/micropython/ot/lib
