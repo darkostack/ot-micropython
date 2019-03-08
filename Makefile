@@ -28,6 +28,7 @@ endif
 clean:
 	-rm -rf third_party/openthread/build
 	-rm -rf third_party/openthread/output
+	-rm -rf tmp
 ifeq ($(PLATFORM),posix)
 	-rm -rf third_party/micropython/ports/unix/build
 else
